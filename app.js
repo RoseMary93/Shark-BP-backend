@@ -455,9 +455,9 @@ app.delete("/api/categories/:id", authenticateToken, async (req, res) => {
 
 // 4. Budget (Repurposed for Blood Pressure Target/Warning Limit)
 // 嚴格限制 token
-// app.get("/api/budget", authenticateToken, async (req, res) => {
+app.get("/api/budget", authenticateToken, async (req, res) => {
 // 不嚴格限制 token
-app.get("/api/budget", async (req, res) => {
+// app.get("/api/budget", async (req, res) => {
   try {
     const found = await findRowById(BUDGET_SHEET_RANGE, "id", "1");
     if (!found) {
